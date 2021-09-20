@@ -1,0 +1,49 @@
+.rechts {
+ text-align:center;
+ display:inline-block
+}
+.woordformulier {
+ display:inline-block;
+ vertical-align:top
+}
+.ouder {
+ display:block
+}
+.rating {
+ text-align:center!important;
+ padding-top:40px!important;
+ font-size:18px!important;
+ padding-bottom:20px
+}
+.kk-star-ratings.lft {
+ float:none!important;
+ margin:0 auto!important;
+ padding-top:10px!important
+}
+
+.woorden span {
+ background-color: #0c95c7;
+ color: #fff;
+ padding: 6px 12px;
+ margin: 6px;
+ border-right: 1px solid #c5c3c3;
+ border-bottom: 1px solid #c5c3c3;
+ display: inline-block;
+}
+
+span:hover{
+ color: darkorange;
+ background-color: aqua;
+}
+span.active {
+ background: green;
+}
+
+span.active::before {
+ content: " ♥ ";
+ color: darkorange;
+}
+span.active::after {
+ content: " ♥ ";
+ color: darkorange;
+}
