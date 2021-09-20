@@ -1,4 +1,4 @@
-package ir.app.woord;
+package ir.app.language;
 
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.server.PWA;

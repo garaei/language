@@ -1,39 +1,26 @@
-package ir.app.woord.views;
+package ir.app.language.views;
+
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.applayout.AppLayout;
+import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.RouterLink;
+import ir.app.language.views.about.AboutView;
+import ir.app.language.views.dutch.DutchView;
+import ir.app.language.views.english.EnglishView;
+import ir.app.language.views.french.FrenchView;
+import ir.app.language.views.persian.PersianView;
+import ir.app.language.views.spanish.SpanishView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.ComponentUtil;
-import com.vaadin.flow.component.Text;
-import com.vaadin.flow.component.applayout.AppLayout;
-import com.vaadin.flow.component.charts.model.Navigation;
-import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.Header;
-import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.html.Nav;
-import com.vaadin.flow.component.html.Span;
-import com.vaadin.flow.component.orderedlayout.FlexComponent;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.tabs.Tab;
-import com.vaadin.flow.component.tabs.TabVariant;
-import com.vaadin.flow.component.tabs.Tabs;
-import com.vaadin.flow.router.RouterLink;
-import com.vaadin.flow.router.Route;
-import com.vaadin.flow.router.PageTitle;
-import ir.app.woord.views.MainLayout;
-import ir.app.woord.views.helloworld.HelloWorldView;
-import ir.app.woord.views.about.AboutView;
-import com.vaadin.flow.component.avatar.Avatar;
 
 /**
  * The main view is a top-level placeholder for other views.
  */
 @PageTitle("Main")
 public class MainLayout extends AppLayout {
+    public static H1 appName;
 
     public static class MenuItemInfo {
 
@@ -72,7 +59,7 @@ public class MainLayout extends AppLayout {
         Div layout = new Div();
         layout.addClassNames("flex", "h-xl", "items-center", "px-l");
 
-        H1 appName = new H1("Hallo woord");
+        appName = new H1("Online Taaltraining Centrum");
         appName.addClassNames("my-0", "me-auto", "text-l");
         layout.add(appName);
 
@@ -88,10 +75,20 @@ public class MainLayout extends AppLayout {
     }
 
     private List<RouterLink> createLinks() {
+        MenuItemInfo dutch;
+        MenuItemInfo english;
+        MenuItemInfo persian;
+        MenuItemInfo french;
+        MenuItemInfo spanish;
+        MenuItemInfo about;
         MenuItemInfo[] menuItems = new MenuItemInfo[]{ //
-                new MenuItemInfo("Hello World", "la la-glass-martini", HelloWorldView.class), //
+                dutch = new MenuItemInfo(DutchView.TITLE, "las la-dragon la-2x", DutchView.class), //
+                english = new MenuItemInfo(EnglishView.TITLE, "las la-spider la-2x", EnglishView.class), //
+                persian = new MenuItemInfo(PersianView.TITLE, "las la-dove la-2x", PersianView.class), //
+                french = new MenuItemInfo(FrenchView.TITLE, "las la-otter la-2x", FrenchView.class), //
+                spanish = new MenuItemInfo(SpanishView.TITLE, "las la-hippo la-2x", SpanishView.class), //
 
-                new MenuItemInfo("About", "la la-file", AboutView.class), //
+                about = new MenuItemInfo("About", "las la-hiking la-2x", AboutView.class), //
 
         };
         List<RouterLink> links = new ArrayList<>();

@@ -1,16 +1,21 @@
-package ir.app.woord.views.about;
+package ir.app.language.views.about;
 
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.AfterNavigationEvent;
+import com.vaadin.flow.router.AfterNavigationObserver;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.PageTitle;
-import ir.app.woord.views.MainLayout;
+import ir.app.language.views.MainLayout;
 
 @PageTitle("About")
-@Route(value = "about", layout = MainLayout.class)
-public class AboutView extends VerticalLayout {
+@Route(value = AboutView.ROUTE, layout = MainLayout.class)
+public class AboutView extends VerticalLayout implements AfterNavigationObserver {
+    public static final String ROUTE = "about";
+    public static final String TITLE = "About Us";
+    public static final String SLOGAN = "Over ons, About us,";
 
     public AboutView() {
         Image img = new Image("images/empty-plant.png", "placeholder plant");
@@ -26,4 +31,8 @@ public class AboutView extends VerticalLayout {
         getStyle().set("text-align", "center");
     }
 
+    @Override
+    public void afterNavigation(AfterNavigationEvent afterNavigationEvent) {
+        MainLayout.appName.setText(SLOGAN);
+    }
 }

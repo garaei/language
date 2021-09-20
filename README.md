@@ -1,4 +1,4 @@
-# Hallo woord
+# Hallo word
 
 This project can be used as a starting point to create your own Vaadin application with Spring Boot.
 It contains all the necessary configuration and some placeholder files to get you started.
@@ -43,3 +43,35 @@ Once the JAR file is built, you can run it using
 - Find Add-ons at [vaadin.com/directory](https://vaadin.com/directory).
 - Ask questions on [Stack Overflow](https://stackoverflow.com/questions/tagged/vaadin) or join our [Discord channel](https://discord.gg/MYFq5RTbBn).
 - Report issues, create pull requests in [GitHub](https://github.com/vaadin/platform).
+
+English references:
+
+    // ref to read more about NLP: https://progur.com/2016/10/getting-started-with-nlp-compromise-js.html
+    // ref to api: http://wordnetweb.princeton.edu/perl/webwn?s=Doodly&sub=Search+WordNet&o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&h=
+    //ref: https://www.babelnet.org/
+
+Nederlandse verwijzingen:
+
+    // references
+    //https://apps-gallery.toolforge.org/
+    //https://maken.wikiwijs.nl/83178/Leerlijn_Woordenschat_hv12#!page-2308099
+
+    // onderwijs
+    //https://www.kennisnet.nl/edurep/edurep-widgets/edurep-wizard/
+    //https://schooltv.nl/
+    //http://taalunieversum.org/inhoud/leermiddelengids
+    //https://taaluniebericht.org/haal-de-fout-uit-de-zin
+    //https://synoniemen.net/uitleg.php#colofon
+    //https://languagetoolplus.com/http-api/#/default
+
+
+Icon reference:
+
+    // https://www.angularjswiki.com/fontawesome/fa-glass-martini/
+    // https://icons8.com/line-awesome
+Ali's note:
+https://dumps.wikimedia.org/enwiktionary/latest/
+-----------------------------------------------------------
+To keep it really simple, extract the words from the dump like this:
+bzcat pages-articles.xml.bz2 | grep '<title>[^[:space:][:punct:]]*</title>' | sed 's:.*<title>\(.*\)</title>.*:\1:' > words
+------------------------------------------------------------------------
